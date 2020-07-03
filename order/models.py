@@ -6,7 +6,7 @@ from menu.models import Drink
 class Order(models.Model):
     #drink, stock, cup, ice, sugar, pearl, price
     drink = models.ForeignKey(Drink, on_delete=models.CASCADE, related_name= 'order')
-    stock = models.PositiveIntegerField(delattr=1)
+    stock = models.PositiveIntegerField(default=1)
     cup = models.IntegerField()  #0:레귤러, 1:점보
     ice = models.IntegerField(default=100) #0, 50, 100, 150%
     sugar = models.IntegerField(default=100) #0, 50, 100, 150%
